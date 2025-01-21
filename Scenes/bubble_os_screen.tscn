@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://csam5h6228byy"]
+[gd_scene load_steps=5 format=3 uid="uid://csam5h6228byy"]
 
 [ext_resource type="Texture2D" uid="uid://bqe43qu5j00ei" path="res://icon.svg" id="1_wmtkl"]
+[ext_resource type="Script" path="res://Scenes/bubble_app.gd" id="2_sngyb"]
+[ext_resource type="Shader" path="res://Scenes/ScreenLayer2.gdshader" id="3_ao71x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f086i"]
+shader = ExtResource("3_ao71x")
+shader_parameter/window_position = Vector2(0.5, 0.5)
+shader_parameter/window_radius = 0.334
 
 [node name="MainLevel" type="Node2D"]
 
@@ -15,7 +22,19 @@ texture = ExtResource("1_wmtkl")
 
 [node name="BubbleOS Screen" type="Node2D" parent="."]
 
-[node name="ScreenLayer" type="Sprite2D" parent="BubbleOS Screen"]
+[node name="BubbleApp" type="Node2D" parent="BubbleOS Screen"]
+script = ExtResource("2_sngyb")
+
+[node name="ScreenLayer" type="Sprite2D" parent="BubbleOS Screen/BubbleApp"]
+material = SubResource("ShaderMaterial_f086i")
+use_parent_material = true
 position = Vector2(571, 324)
 scale = Vector2(9.08, 5.065)
 texture = ExtResource("1_wmtkl")
+
+[node name="Polygon2D" type="Polygon2D" parent="BubbleOS Screen/BubbleApp"]
+position = Vector2(70, 321)
+scale = Vector2(11.6, 6.305)
+color = Color(1, 1, 1, 0)
+offset = Vector2(-7.24138, -56.4631)
+polygon = PackedVector2Array(46.0345, 40.6027, 69.1379, 42.8232, 68.4483, 55.3529, 65.2586, 66.7724, 58.7931, 67.724, 53.6207, 68.0412, 43.4483, 66.6138, 36.2931, 61.8557, 33.3621, 52.9738, 32.8448, 46.7883, 34.9138, 35.8446, 38.2759, 30.1348, 43.2758, 30.9278, 45.3448, 39.1753)
