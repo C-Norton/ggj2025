@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://csam5h6228byy"]
+
+[ext_resource type="Texture2D" uid="uid://bqe43qu5j00ei" path="res://icon.svg" id="1_wmtkl"]
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="MazeLayer" type="Node2D" parent="."]
+
+[node name="LevelLayer" type="Sprite2D" parent="MazeLayer"]
+modulate = Color(0.335353, 1, 0.875118, 1)
+self_modulate = Color(0.379422, 1, 0.833935, 1)
+position = Vector2(571, 324)
+scale = Vector2(9.08, 5.065)
+texture = ExtResource("1_wmtkl")
+
+[node name="BubbleOS Screen" type="Node2D" parent="."]
+
+[node name="ScreenLayer" type="Sprite2D" parent="BubbleOS Screen"]
+position = Vector2(571, 324)
+scale = Vector2(9.08, 5.065)
+texture = ExtResource("1_wmtkl")
