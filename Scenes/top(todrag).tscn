@@ -7,7 +7,7 @@ size = Vector3(0.01, 0.242256, 0.998925)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xtno8"]
 
-[node name="TopBar(Drag)" type="Area3D"]
+[node name="Area3D" type="Area3D"]
 script = ExtResource("1_h4gtx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
