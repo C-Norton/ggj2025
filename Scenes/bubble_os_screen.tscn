@@ -1,40 +1,61 @@
-[gd_scene load_steps=5 format=3 uid="uid://csam5h6228byy"]
+[gd_scene load_steps=9 format=3 uid="uid://csam5h6228byy"]
 
+[ext_resource type="Texture2D" uid="uid://bd2c6ynqc6q41" path="res://PeakWriting.jpg" id="1_dbyi6"]
 [ext_resource type="Texture2D" uid="uid://bqe43qu5j00ei" path="res://icon.svg" id="1_wmtkl"]
-[ext_resource type="Script" path="res://Scenes/bubble_app.gd" id="2_sngyb"]
-[ext_resource type="Shader" path="res://Scenes/ScreenLayer2.gdshader" id="3_ao71x"]
+[ext_resource type="PackedScene" uid="uid://brmnchvag4tom" path="res://Scenes/top(todrag).tscn" id="2_ebenc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f086i"]
-shader = ExtResource("3_ao71x")
-shader_parameter/window_position = Vector2(0.5, 0.5)
-shader_parameter/window_radius = 0.334
+[sub_resource type="PlaneMesh" id="PlaneMesh_kcb8m"]
 
-[node name="MainLevel" type="Node2D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ada62"]
+albedo_texture = ExtResource("1_dbyi6")
 
-[node name="MazeLayer" type="Node2D" parent="."]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7icla"]
+albedo_texture = ExtResource("1_wmtkl")
 
-[node name="LevelLayer" type="Sprite2D" parent="MazeLayer"]
-modulate = Color(0.335353, 1, 0.875118, 1)
-self_modulate = Color(0.379422, 1, 0.833935, 1)
-position = Vector2(571, 324)
-scale = Vector2(9.08, 5.065)
-texture = ExtResource("1_wmtkl")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_laox1"]
 
-[node name="BubbleOS Screen" type="Node2D" parent="."]
+[sub_resource type="BoxMesh" id="BoxMesh_ti666"]
+material = SubResource("StandardMaterial3D_laox1")
+size = Vector3(0.09, 1, 1)
 
-[node name="BubbleApp" type="Node2D" parent="BubbleOS Screen"]
-script = ExtResource("2_sngyb")
+[node name="Scene" type="Node3D"]
 
-[node name="ScreenLayer" type="Sprite2D" parent="BubbleOS Screen/BubbleApp"]
-material = SubResource("ShaderMaterial_f086i")
-use_parent_material = true
-position = Vector2(571, 324)
-scale = Vector2(9.08, 5.065)
-texture = ExtResource("1_wmtkl")
+[node name="MainCam" type="Camera3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -2.773, 0, 0)
 
-[node name="Polygon2D" type="Polygon2D" parent="BubbleOS Screen/BubbleApp"]
-position = Vector2(70, 321)
-scale = Vector2(11.6, 6.305)
-color = Color(1, 1, 1, 0)
-offset = Vector2(-7.24138, -56.4631)
-polygon = PackedVector2Array(46.0345, 40.6027, 69.1379, 42.8232, 68.4483, 55.3529, 65.2586, 66.7724, 58.7931, 67.724, 53.6207, 68.0412, 43.4483, 66.6138, 36.2931, 61.8557, 33.3621, 52.9738, 32.8448, 46.7883, 34.9138, 35.8446, 38.2759, 30.1348, 43.2758, 30.9278, 45.3448, 39.1753)
+[node name="MazeLayer" type="Node3D" parent="."]
+
+[node name="Screen2" type="MeshInstance3D" parent="MazeLayer"]
+transform = Transform3D(-1.31134e-07, -3, 0, 2, -8.74228e-08, 0, 0, 0, 3, 0, 0, 12.2305)
+mesh = SubResource("PlaneMesh_kcb8m")
+skeleton = NodePath("../../BubbleOSLayer")
+
+[node name="BubbleOSLayer" type="Node3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="Screen" type="MeshInstance3D" parent="BubbleOSLayer"]
+transform = Transform3D(-5.87918e-08, -1.345, 0, 1.345, -5.87918e-08, 0, 0, 0, 1.345, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ada62")
+mesh = SubResource("PlaneMesh_kcb8m")
+
+[node name="TopBar(Drag)" parent="BubbleOSLayer" instance=ExtResource("2_ebenc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0776495, 0, 0)
+
+[node name="BubbleApp" type="Node3D" parent="BubbleOSLayer/TopBar(Drag)"]
+
+[node name="SubGame" type="MeshInstance3D" parent="BubbleOSLayer/TopBar(Drag)/BubbleApp"]
+material_override = SubResource("StandardMaterial3D_7icla")
+mesh = SubResource("BoxMesh_ti666")
+skeleton = NodePath("../../..")
+
+[node name="Node3D" type="Node3D" parent="BubbleOSLayer/TopBar(Drag)/BubbleApp"]
+
+[node name="SubGameScreen" type="SubViewport" parent="BubbleOSLayer/TopBar(Drag)/BubbleApp/Node3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -3.37754, 0.319187, 0)
+light_energy = 16.0
+light_indirect_energy = 16.0
+spot_range = 20.0
+spot_angle = 180.0
+spot_angle_attenuation = 1e-05

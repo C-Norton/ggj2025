@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://brmnchvag4tom"]
+
+[ext_resource type="Script" path="res://Scripts/DragNavBar.gd" id="1_h4gtx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mp8v"]
+size = Vector3(0.01, 0.242256, 0.998925)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xtno8"]
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_h4gtx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0.377797, -0.008)
+shape = SubResource("BoxShape3D_1mp8v")
+
+[node name="top(todrag)" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.24537e-09, -1, 0, 0.12, -4.37114e-08, 0, 0, 0, 0.5, -0.0498158, 0.377118, 0.000327012)
+mesh = SubResource("PlaneMesh_xtno8")
