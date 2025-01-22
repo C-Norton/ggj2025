@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://csam5h6228byy"]
+[gd_scene load_steps=9 format=3 uid="uid://csam5h6228byy"]
 
 [ext_resource type="Texture2D" uid="uid://bd2c6ynqc6q41" path="res://PeakWriting.jpg" id="1_dbyi6"]
 [ext_resource type="Texture2D" uid="uid://bqe43qu5j00ei" path="res://icon.svg" id="1_wmtkl"]
@@ -12,7 +12,10 @@ albedo_texture = ExtResource("1_dbyi6")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7icla"]
 albedo_texture = ExtResource("1_wmtkl")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_laox1"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_ti666"]
+material = SubResource("StandardMaterial3D_laox1")
 size = Vector3(0.09, 1, 1)
 
 [node name="Scene" type="Node3D"]
@@ -47,7 +50,7 @@ skeleton = NodePath("../../..")
 
 [node name="Node3D" type="Node3D" parent="BubbleOSLayer/TopBar(Drag)/BubbleApp"]
 
-[node name="SubGameViewPort" type="SubViewport" parent="BubbleOSLayer/TopBar(Drag)/BubbleApp/Node3D"]
+[node name="SubGameScreen" type="SubViewport" parent="BubbleOSLayer/TopBar(Drag)/BubbleApp/Node3D"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -3.37754, 0.319187, 0)
