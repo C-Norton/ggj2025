@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ugcnihclt5"]
+
+[ext_resource type="Script" path="res://_Scripts/PlayerController.gd" id="1_unjxv"]
+[ext_resource type="Texture2D" uid="uid://4x0o8a1m60ir" path="res://Assets/Sprites/Submarine.png" id="2_61f4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbvg0"]
+size = Vector2(81, 43)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_unjxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_bbvg0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(0.440594, 0.440594)
+texture = ExtResource("2_61f4n")
