@@ -24,7 +24,7 @@ func _process(delta):
 		var mouse_delta = mouse_pos - previous_mouse_pos  # Calculate how much the mouse moved since the last frame
 
 		# Debugging: print mouse movement and new position
-		print("Mouse Delta: ", mouse_delta)
+		#print("Mouse Delta: ", mouse_delta)
 
 		# Map the mouse movement to the z and y positions of the 3D node
 		var new_position = global_transform.origin

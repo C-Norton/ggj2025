@@ -1,20 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://brmnchvag4tom"]
+[gd_scene load_steps=5 format=3 uid="uid://brmnchvag4tom"]
 
-[ext_resource type="Script" path="res://Scripts/DragNavBar.gd" id="1_h4gtx"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1mp8v"]
-size = Vector3(0.01, 0.242256, 0.998925)
+[ext_resource type="Script" path="res://Scenes/DragV2.gd" id="1_0iag2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xtno8"]
 
-[node name="Area3D" type="Area3D"]
-script = ExtResource("1_h4gtx")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_beg0d"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0.377797, -0.008)
-shape = SubResource("BoxShape3D_1mp8v")
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mp8v"]
+size = Vector3(0.01, 0.873047, 0.89657)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_0iag2")
 
 [node name="top(todrag)" type="MeshInstance3D" parent="."]
-transform = Transform3D(-5.24537e-09, -1, 0, 0.12, -4.37114e-08, 0, 0, 0, 0.5, -0.0498158, 0.377118, 0.000327012)
-visible = false
+transform = Transform3D(-5.24537e-09, -1, 0, 0.12, -4.37114e-08, 0, 0, 0, 0.5, -0.0491088, 0.380441, 0.000456116)
 mesh = SubResource("PlaneMesh_xtno8")
+skeleton = NodePath("Area3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_beg0d")
+
+[node name="Area3D" type="Area3D" parent="top(todrag)"]
+transform = Transform3D(-4.01339e-07, 1, 0, -1, -4.01339e-07, 0, 0, 0, 1, -3.14265, -0.0498158, -0.000654024)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="top(todrag)/Area3D"]
+transform = Transform3D(2.24, -2.30784e-11, 0, 0, 2.24, 0, 0, 0, 2.24, -0.070217, 3.16535, 0.00334639)
+shape = SubResource("BoxShape3D_1mp8v")
+
+[connection signal="input_event" from="top(todrag)/Area3D" to="." method="_on_area_3d_input_event"]
