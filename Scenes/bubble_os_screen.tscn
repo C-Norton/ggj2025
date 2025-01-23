@@ -17,7 +17,7 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -3.85588
 [node name="BubbleOSLayer" type="Node3D" parent="."]
 
 [node name="Screen" type="MeshInstance3D" parent="BubbleOSLayer"]
-transform = Transform3D(-1.31134e-07, -2, 0, 3, -8.74228e-08, 0, 0, 0, 6.56327, 0, 0, 0)
+transform = Transform3D(-1.31134e-07, -2, 0, 3, -8.74228e-08, 0, 0, 0, 6.56327, -1, 0, 0)
 material_override = SubResource("StandardMaterial3D_ada62")
 mesh = SubResource("PlaneMesh_kcb8m")
 
@@ -26,8 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8963, 0, 0)
 
 [node name="GameApp" parent="BubbleOSLayer/TopDrag" instance=ExtResource("2_b3clr")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -0.00162292, -0.145703, 0)
-
-[node name="Node3D" type="Node3D" parent="BubbleOSLayer"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -3.37754, 0.319187, 0)

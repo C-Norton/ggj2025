@@ -19,10 +19,10 @@ transform = Transform3D(0.857141, 0, 0, 0, 0.958687, 0, -8.88178e-16, 0, 0.50090
 texture = SubResource("ViewportTexture_oop8f")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-anchors_preset = -1
-offset_left = 106.53
-offset_right = 234.53
-offset_bottom = 128.0
+offset_left = -1904.0
+offset_top = -750.0
+offset_right = -1776.0
+offset_bottom = -622.0
 script = ExtResource("2_kkfks")
 
 [node name="ScreenDisplayViewport" type="SubViewport" parent="SubViewportContainer"]
