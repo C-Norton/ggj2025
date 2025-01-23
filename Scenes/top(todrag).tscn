@@ -16,4 +16,5 @@ shape = SubResource("BoxShape3D_1mp8v")
 
 [node name="top(todrag)" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5.24537e-09, -1, 0, 0.12, -4.37114e-08, 0, 0, 0, 0.5, -0.0498158, 0.377118, 0.000327012)
+visible = false
 mesh = SubResource("PlaneMesh_xtno8")

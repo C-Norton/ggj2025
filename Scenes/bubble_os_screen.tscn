@@ -1,53 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://csam5h6228byy"]
+[gd_scene load_steps=6 format=3 uid="uid://csam5h6228byy"]
 
 [ext_resource type="Texture2D" uid="uid://bd2c6ynqc6q41" path="res://PeakWriting.jpg" id="1_dbyi6"]
-[ext_resource type="Texture2D" uid="uid://bqe43qu5j00ei" path="res://icon.svg" id="1_wmtkl"]
+[ext_resource type="PackedScene" uid="uid://c1r05rcenmrdp" path="res://Scenes/GameApp.tscn" id="2_b3clr"]
 [ext_resource type="PackedScene" uid="uid://brmnchvag4tom" path="res://Scenes/top(todrag).tscn" id="2_ebenc"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_kcb8m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ada62"]
 albedo_texture = ExtResource("1_dbyi6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7icla"]
-albedo_texture = ExtResource("1_wmtkl")
-
-[sub_resource type="BoxMesh" id="BoxMesh_ti666"]
-size = Vector3(0.09, 1, 1)
+[sub_resource type="PlaneMesh" id="PlaneMesh_kcb8m"]
 
 [node name="Scene" type="Node3D"]
 
 [node name="MainCam" type="Camera3D" parent="."]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -2.8, 0, 0)
-
-[node name="MazeLayer" type="Node3D" parent="."]
-
-[node name="Screen2" type="MeshInstance3D" parent="MazeLayer"]
-transform = Transform3D(-1.31134e-07, -3, 0, 2, -8.74228e-08, 0, 0, 0, 3, 0, 0, 12.2305)
-mesh = SubResource("PlaneMesh_kcb8m")
-skeleton = NodePath("../../BubbleOSLayer")
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -3.85588, 0, 0)
 
 [node name="BubbleOSLayer" type="Node3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="Screen" type="MeshInstance3D" parent="BubbleOSLayer"]
-transform = Transform3D(-5.87918e-08, -1.345, 0, 1.345, -5.87918e-08, 0, 0, 0, 1.345, 0, 0, 0)
+transform = Transform3D(-1.31134e-07, -2, 0, 3, -8.74228e-08, 0, 0, 0, 6.56327, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_ada62")
 mesh = SubResource("PlaneMesh_kcb8m")
 
-[node name="TopBar(Drag)" parent="BubbleOSLayer" instance=ExtResource("2_ebenc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0782562, 0, 0)
+[node name="TopDrag" parent="BubbleOSLayer" instance=ExtResource("2_ebenc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8963, 0, 0)
 
-[node name="BubbleApp" type="Node3D" parent="BubbleOSLayer/TopBar(Drag)"]
+[node name="GameApp" parent="BubbleOSLayer/TopDrag" instance=ExtResource("2_b3clr")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -0.00162292, -0.145703, 0)
 
-[node name="SubGame" type="MeshInstance3D" parent="BubbleOSLayer/TopBar(Drag)/BubbleApp"]
-material_override = SubResource("StandardMaterial3D_7icla")
-mesh = SubResource("BoxMesh_ti666")
-skeleton = NodePath("../../..")
-
-[node name="Node3D" type="Node3D" parent="BubbleOSLayer/TopBar(Drag)/BubbleApp"]
-
-[node name="SubGameViewPort" type="SubViewport" parent="BubbleOSLayer/TopBar(Drag)/BubbleApp/Node3D"]
+[node name="Node3D" type="Node3D" parent="BubbleOSLayer"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -3.37754, 0.319187, 0)

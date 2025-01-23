@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb7ceol6vw80x"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5tmw3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_715au"]
+
+[node name="Level" type="Node3D"]
+
+[node name="Background" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_5tmw3")
+
+[node name="WaterFilter" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.508768)
+visible = false
+mesh = SubResource("PlaneMesh_5tmw3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.684667, 0.905384, 1.30799)
+fov = 20.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(-4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0, 0.1, -0.680857, 0.877489, 0.1)
+mesh = SubResource("CapsuleMesh_715au")

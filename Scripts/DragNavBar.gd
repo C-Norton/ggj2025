@@ -4,7 +4,7 @@ var is_dragging = false
 var offset = Vector3.ZERO  # Offset between mouse position and object position
 var previous_mouse_pos = Vector2.ZERO  # Track previous mouse position
 # Reduced sensitivity multiplier for movement
-@export var sensitivity = 0.0058 # this is perfect lowkey  #window moves faster sliiightly at 0.006 #0.005 mouse moves faster
+@export var sensitivity = 0.003 # this WAS not anymore perfect lowkey  #window moves faster sliiightly at 0.006 #0.005 mouse moves faster
 
 # Detect if the click starts on the CollisionShape3D
 func _input(event: InputEvent) -> void:
