@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1r05rcenmrdp"]
+[gd_scene load_steps=8 format=3 uid="uid://c1r05rcenmrdp"]
 
 [ext_resource type="Texture2D" uid="uid://33l3ihkxbadn" path="res://TemplateOS.png" id="1_bwok3"]
 [ext_resource type="Texture2D" uid="uid://bqe43qu5j00ei" path="res://icon.svg" id="2_cp30q"]
 [ext_resource type="Script" path="res://Scenes/ViewPortFollow.gd" id="2_kkfks"]
+[ext_resource type="Script" path="res://Scenes/button_stick.gd" id="4_lwp5j"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_oop8f"]
 viewport_path = NodePath("SubViewportContainer/ScreenDisplayViewport")
+
+[sub_resource type="SphereMesh" id="SphereMesh_bgyu5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_asc07"]
 
 [node name="GameApp" type="Node3D"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
@@ -35,3 +40,18 @@ render_target_update_mode = 4
 transform = Transform3D(-3.80289e-08, 0, -0.87, 0, 0.87, 0, 0.87, 0, -3.80289e-08, 0.0409783, -0.592, -0.503633)
 centered = false
 texture = ExtResource("2_cp30q")
+
+[node name="ButtonStick" type="Node3D" parent="."]
+transform = Transform3D(0.225, 0, 0, 0, 0.225, 0, 0, 0, 0.225, -0.472864, -0.547165, -5.63886e-09)
+script = ExtResource("4_lwp5j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonStick"]
+transform = Transform3D(1.1, 0, -2.66454e-15, 0, 1.1, 0, 2.66454e-15, 0, 1.1, -0.072104, -0.101126, -0.0376918)
+mesh = SubResource("SphereMesh_bgyu5")
+
+[node name="Area3D" type="Area3D" parent="ButtonStick/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonStick/MeshInstance3D/Area3D"]
+shape = SubResource("SphereShape3D_asc07")
+
+[connection signal="input_event" from="ButtonStick/MeshInstance3D/Area3D" to="ButtonStick" method="_on_area_3d_input_event"]
