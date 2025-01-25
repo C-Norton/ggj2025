@@ -5,9 +5,10 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_5tmw3"]
 
 [node name="Level" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0122851, 0)
 
 [node name="Background" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(3.81002, 0, 0, 0, -4.37114e-08, -4.20649, 0, 1, -1.83871e-07, 0, 0.26532, 0)
 mesh = SubResource("PlaneMesh_5tmw3")
 
 [node name="WaterFilter" type="CSGMesh3D" parent="."]
@@ -16,7 +17,7 @@ visible = false
 mesh = SubResource("PlaneMesh_5tmw3")
 
 [node name="littlewhalesubmarinething" parent="." instance=ExtResource("1_0qfuv")]
-transform = Transform3D(-3.27835e-09, 2.86603e-16, 0.075, 6.55671e-09, 0.075, 0, 0.075, -6.55671e-09, 3.27835e-09, -0.667194, 0.851613, 0.07)
+transform = Transform3D(-3.27835e-09, 2.86603e-16, 0.075, 6.55671e-09, 0.075, 0, 0.075, -6.55671e-09, 3.27835e-09, -2.60704, 0.446977, 0.07)
 
 [node name="Camera3D" type="Camera3D" parent="littlewhalesubmarinething"]
 transform = Transform3D(-5.82819e-07, 1.16564e-06, 13.3333, 5.09516e-14, 13.3333, -1.16564e-06, 13.3333, 4.14118e-21, 5.82819e-07, 27.436, 0.716939, -0.232965)

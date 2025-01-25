@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8fja8m21hycg"]
+
+[ext_resource type="Material" uid="uid://m16fant51b4r" path="res://Materials/Transparent.tres" id="1_gutm7"]
+[ext_resource type="Script" path="res://Scripts/button_stick.gd" id="1_q35vp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bgyu5"]
+material = ExtResource("1_gutm7")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_asc07"]
+
+[node name="ButtonStick" type="Node3D"]
+transform = Transform3D(0.225, 0, 0, 0, 0.225, 0, 0, 0, 0.225, -0.472864, -0.547165, -5.63886e-09)
+script = ExtResource("1_q35vp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.1, 0, -2.66454e-15, 0, 1.1, 0, 2.66454e-15, 0, 1.1, -0.072104, -0.101126, -0.0376918)
+mesh = SubResource("SphereMesh_bgyu5")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+shape = SubResource("SphereShape3D_asc07")
+
+[connection signal="input_event" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_input_event"]

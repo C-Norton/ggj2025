@@ -1,23 +1,171 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1r05rcenmrdp"]
+[gd_scene load_steps=22 format=3 uid="uid://c1r05rcenmrdp"]
 
+[ext_resource type="Texture2D" uid="uid://ccqtpg1hn3mxt" path="res://Images/App/defaultScreen.png" id="1_e2hin"]
 [ext_resource type="Texture2D" uid="uid://i7x31vhpkpc3" path="res://Images/App/Screen1pressvbutton.png" id="1_m27js"]
+[ext_resource type="Texture2D" uid="uid://ibsk4e7obgto" path="res://Images/App/Screen1pressbubbles.png" id="2_6a8j5"]
 [ext_resource type="Texture2D" uid="uid://bqe43qu5j00ei" path="res://icon.svg" id="2_cp30q"]
 [ext_resource type="Script" path="res://Scenes/ViewPortFollow.gd" id="2_kkfks"]
-[ext_resource type="Script" path="res://Scenes/button_stick.gd" id="4_lwp5j"]
+[ext_resource type="Texture2D" uid="uid://doxvhojdynvv1" path="res://Images/App/Screen1presseyes.png" id="3_bk8c6"]
+[ext_resource type="Texture2D" uid="uid://vkm8rin61hrd" path="res://Images/App/Screen1presslight.png" id="4_80ioh"]
+[ext_resource type="Texture2D" uid="uid://d3kkcjuqjcin6" path="res://Images/App/Screen1pressiibutton.png" id="5_388ui"]
+[ext_resource type="Texture2D" uid="uid://b8454w50sxybq" path="res://Images/App/Screen1pressvvbutton.png" id="7_im7mr"]
+[ext_resource type="Texture2D" uid="uid://darxyx8ejthih" path="res://Images/App/Screen1pressXbutton.png" id="8_w10et"]
+[ext_resource type="Texture2D" uid="uid://ua0klpr6acjm" path="res://Images/App/Screen1down.png" id="9_sn1xv"]
+[ext_resource type="Texture2D" uid="uid://87cdykxyjyid" path="res://Images/App/Screen1downleft.png" id="10_qbun6"]
+[ext_resource type="Texture2D" uid="uid://cuk7i23pq4x13" path="res://Images/App/Screen1downright.png" id="11_22aye"]
+[ext_resource type="Texture2D" uid="uid://kyq5k7pohi7q" path="res://Images/App/Screen1left.png" id="12_na2r6"]
+[ext_resource type="Texture2D" uid="uid://b2gvfrvtla1q2" path="res://Images/App/Screen1right.png" id="13_yradl"]
+[ext_resource type="Texture2D" uid="uid://djupttsl5i8er" path="res://Images/App/Screen1up.png" id="14_1wnyh"]
+[ext_resource type="Texture2D" uid="uid://csprps8rw233r" path="res://Images/App/Screen1upleft.png" id="15_bwmef"]
+[ext_resource type="Texture2D" uid="uid://u477hyikj81t" path="res://Images/App/Screen1upright.png" id="16_ruwh6"]
+[ext_resource type="PackedScene" uid="uid://b8fja8m21hycg" path="res://Scenes/ButtonStick.tscn" id="19_xqoto"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hpufy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e2hin")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6a8j5")
+}],
+"loop": true,
+"name": &"press_button_bubbles",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bk8c6")
+}],
+"loop": true,
+"name": &"press_button_eyes",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_80ioh")
+}],
+"loop": true,
+"name": &"press_button_light",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_388ui")
+}],
+"loop": true,
+"name": &"press_button_pause",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m27js")
+}],
+"loop": true,
+"name": &"press_button_play",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_im7mr")
+}],
+"loop": true,
+"name": &"press_button_speed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_w10et")
+}],
+"loop": true,
+"name": &"press_button_x",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_sn1xv")
+}],
+"loop": true,
+"name": &"stick_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_qbun6")
+}],
+"loop": true,
+"name": &"stick_down_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_22aye")
+}],
+"loop": true,
+"name": &"stick_down_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_na2r6")
+}],
+"loop": true,
+"name": &"stick_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_yradl")
+}],
+"loop": true,
+"name": &"stick_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_1wnyh")
+}],
+"loop": true,
+"name": &"stick_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_bwmef")
+}],
+"loop": true,
+"name": &"stick_up_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ruwh6")
+}],
+"loop": true,
+"name": &"stick_up_right",
+"speed": 5.0
+}]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_oop8f"]
 viewport_path = NodePath("SubViewportContainer/ScreenDisplayViewport")
 
-[sub_resource type="SphereMesh" id="SphereMesh_bgyu5"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_asc07"]
-
 [node name="GameApp" type="Node3D"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
 
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_hpufy")
+autoplay = "default"
+
 [node name="Border" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-texture = ExtResource("1_m27js")
+visible = false
+texture = ExtResource("1_e2hin")
 
 [node name="Display Image" type="Sprite3D" parent="."]
 transform = Transform3D(0.857141, 0, 0, 0, 0.958687, 0, -8.88178e-16, 0, 0.500908, 0.0439334, -0.017, -0.0913149)
@@ -31,6 +179,7 @@ offset_bottom = -622.0
 script = ExtResource("2_kkfks")
 
 [node name="ScreenDisplayViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(128, 128)
@@ -41,17 +190,4 @@ transform = Transform3D(-3.80289e-08, 0, -0.87, 0, 0.87, 0, 0.87, 0, -3.80289e-0
 centered = false
 texture = ExtResource("2_cp30q")
 
-[node name="ButtonStick" type="Node3D" parent="."]
-transform = Transform3D(0.225, 0, 0, 0, 0.225, 0, 0, 0, 0.225, -0.472864, -0.547165, -5.63886e-09)
-script = ExtResource("4_lwp5j")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonStick"]
-transform = Transform3D(1.1, 0, -2.66454e-15, 0, 1.1, 0, 2.66454e-15, 0, 1.1, -0.072104, -0.101126, -0.0376918)
-mesh = SubResource("SphereMesh_bgyu5")
-
-[node name="Area3D" type="Area3D" parent="ButtonStick/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonStick/MeshInstance3D/Area3D"]
-shape = SubResource("SphereShape3D_asc07")
-
-[connection signal="input_event" from="ButtonStick/MeshInstance3D/Area3D" to="ButtonStick" method="_on_area_3d_input_event"]
+[node name="ButtonStick" parent="." instance=ExtResource("19_xqoto")]

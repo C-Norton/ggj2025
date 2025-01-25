@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8454w50sxybq"
-path.s3tc="res://.godot/imported/Screen1pressvvbutton.png-d82031d1d7e599a1c27d5abc8bbd3b63.s3tc.ctex"
+uid="uid://d3kkcjuqjcin6"
+path.s3tc="res://.godot/imported/Screen1pressiibutton.png-189f7192d9deea2127ebed6104ab162e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/App/Screen1pressvvbutton.png"
-dest_files=["res://.godot/imported/Screen1pressvvbutton.png-d82031d1d7e599a1c27d5abc8bbd3b63.s3tc.ctex"]
+source_file="res://Images/App/Screen1pressiibutton.png"
+dest_files=["res://.godot/imported/Screen1pressiibutton.png-189f7192d9deea2127ebed6104ab162e.s3tc.ctex"]
 
 [params]
 
