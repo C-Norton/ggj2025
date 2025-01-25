@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c1r05rcenmrdp"]
 
-[ext_resource type="Texture2D" uid="uid://33l3ihkxbadn" path="res://TemplateOS.png" id="1_bwok3"]
+[ext_resource type="Texture2D" uid="uid://i7x31vhpkpc3" path="res://Images/App/Screen1pressvbutton.png" id="1_m27js"]
 [ext_resource type="Texture2D" uid="uid://bqe43qu5j00ei" path="res://icon.svg" id="2_cp30q"]
 [ext_resource type="Script" path="res://Scenes/ViewPortFollow.gd" id="2_kkfks"]
 [ext_resource type="Script" path="res://Scenes/button_stick.gd" id="4_lwp5j"]
@@ -17,10 +17,10 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
 
 [node name="Border" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-texture = ExtResource("1_bwok3")
+texture = ExtResource("1_m27js")
 
 [node name="Display Image" type="Sprite3D" parent="."]
-transform = Transform3D(0.857141, 0, 0, 0, 0.958687, 0, -8.88178e-16, 0, 0.500908, 0.0439334, -0.017, -0.0748022)
+transform = Transform3D(0.857141, 0, 0, 0, 0.958687, 0, -8.88178e-16, 0, 0.500908, 0.0439334, -0.017, -0.0913149)
 texture = SubResource("ViewportTexture_oop8f")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -37,7 +37,7 @@ size = Vector2i(128, 128)
 render_target_update_mode = 4
 
 [node name="SceneRender" type="Sprite3D" parent="SubViewportContainer/ScreenDisplayViewport"]
-transform = Transform3D(-3.80289e-08, 0, -0.87, 0, 0.87, 0, 0.87, 0, -3.80289e-08, 0.0409783, -0.592, -0.503633)
+transform = Transform3D(-3.80289e-08, 0, -0.87, 0, 0.87, 0, 0.87, 0, -3.80289e-08, 0.0901576, -0.592, -0.503633)
 centered = false
 texture = ExtResource("2_cp30q")
 
