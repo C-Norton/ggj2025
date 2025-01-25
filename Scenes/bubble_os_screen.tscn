@@ -25,7 +25,7 @@ mesh = SubResource("PlaneMesh_kcb8m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8963, 0, 0)
 
 [node name="GameApp" parent="BubbleOSLayer/TopDrag" instance=ExtResource("2_b3clr")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -0.00162292, -0.145703, 0)
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -0.00162292, -0.199379, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -3.37754, 0.319187, 0)

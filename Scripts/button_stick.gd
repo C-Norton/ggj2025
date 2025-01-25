@@ -25,7 +25,7 @@ func _on_click_release(_true):
 # Called every frame
 func _process(delta: float) -> void:
 	if not is_dragging:  # When not dragging, always reset to default
-		animated_sprite.play("default")
+		#animated_sprite.play("default")
 		return
 	else:
 		var mouse_pos = get_viewport().get_mouse_position()
@@ -38,9 +38,9 @@ func _process(delta: float) -> void:
 			var angle = calculate_angle(drag_vector)
 			var segment = calculate_segment(angle)
 			play_animation_for_segment(segment)
-		else:
-			# If distance is too small, revert to default animation
-			animated_sprite.play("default")
+		#else:
+			## If distance is too small, revert to default animation
+			#animated_sprite.play("default")
 
 # Input event handling for click (start dragging)
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
@@ -52,7 +52,7 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 		else:
 			# Stop dragging and reset to default
 			is_dragging = false
-			animated_sprite.play("default")  # Stop dragging and return to default animation
+			#animated_sprite.play("default")  # Stop dragging and return to default animation
 
 # Function to calculate angle
 func calculate_angle(vector: Vector2) -> float:
@@ -85,3 +85,8 @@ func play_animation_for_segment(segment: int) -> void:
 			animated_sprite.play("stick_left")
 		7: 
 			animated_sprite.play("stick_down_left")
+			
+			
+func play_animation_for_button(animation: String) -> void:
+	print("playing anim")
+	animated_sprite.play(animation)

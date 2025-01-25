@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c1r05rcenmrdp"]
+[gd_scene load_steps=23 format=3 uid="uid://c1r05rcenmrdp"]
 
 [ext_resource type="Texture2D" uid="uid://ccqtpg1hn3mxt" path="res://Images/App/defaultScreen.png" id="1_e2hin"]
 [ext_resource type="Texture2D" uid="uid://i7x31vhpkpc3" path="res://Images/App/Screen1pressvbutton.png" id="1_m27js"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://csprps8rw233r" path="res://Images/App/Screen1upleft.png" id="15_bwmef"]
 [ext_resource type="Texture2D" uid="uid://u477hyikj81t" path="res://Images/App/Screen1upright.png" id="16_ruwh6"]
 [ext_resource type="PackedScene" uid="uid://b8fja8m21hycg" path="res://Scenes/ButtonStick.tscn" id="19_xqoto"]
+[ext_resource type="PackedScene" uid="uid://cyol5plmbf88e" path="res://Scenes/Button.tscn" id="20_0vdr1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hpufy"]
 animations = [{
@@ -160,6 +161,7 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_hpufy")
+animation = &"press_button_x"
 autoplay = "default"
 
 [node name="Border" type="Sprite3D" parent="."]
@@ -191,3 +193,31 @@ centered = false
 texture = ExtResource("2_cp30q")
 
 [node name="ButtonStick" parent="." instance=ExtResource("19_xqoto")]
+
+[node name="ButtonBubble" parent="." instance=ExtResource("20_0vdr1")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.435314, -0.643179, 0.00824883)
+animation = "press_button_bubbles"
+
+[node name="ButtonLight" parent="." instance=ExtResource("20_0vdr1")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.621507, -0.564408, 0.00790056)
+animation = "press_button_light"
+
+[node name="ButtonEye" parent="." instance=ExtResource("20_0vdr1")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.674205, -0.391028, 0.00824883)
+animation = "press_button_eyes"
+
+[node name="ButtonFast" parent="." instance=ExtResource("20_0vdr1")]
+transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, -0.564018, 0.0902632, 0.00680057)
+animation = "press_button_speed"
+
+[node name="ButtonPause" parent="." instance=ExtResource("20_0vdr1")]
+transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, -0.49383, 0.181412, 0.00728543)
+animation = "press_button_pause"
+
+[node name="ButtonPlay" parent="." instance=ExtResource("20_0vdr1")]
+transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, -0.57833, 0.287436, 0.00776559)
+animation = "press_button_play"
+
+[node name="ButtonX" parent="." instance=ExtResource("20_0vdr1")]
+transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0.645306, 0.599068, 0.0084743)
+animation = "press_button_x"
