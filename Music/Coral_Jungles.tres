@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Music" load_steps=2 format=3 uid="uid://c05bj1wp33lki"]
+
+[ext_resource type="Script" path="res://Scenes/music.gd" id="1_1xblu"]
+
+[resource]
+script = ExtResource("1_1xblu")
+name = "Coral_Jungles"
+file_path = "res://Music/Coral Jungles.mp3"

@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://6skhxups3b25"]
+
+[ext_resource type="Script" path="res://Scenes/music_player.gd" id="1_aqtf2"]
+[ext_resource type="Texture2D" uid="uid://bydtcu54uaktd" path="res://Images/ipodscreen1.png" id="1_uliuu"]
+[ext_resource type="Script" path="res://Scenes/music.gd" id="2_f1121"]
+[ext_resource type="Texture2D" uid="uid://c5cuj43725mid" path="res://Images/ipodscreenx.png" id="2_ynmgy"]
+[ext_resource type="Resource" uid="uid://c05bj1wp33lki" path="res://Music/Coral_Jungles.tres" id="3_cqdj0"]
+[ext_resource type="Texture2D" uid="uid://dsuthnfdo6gm8" path="res://Images/ipodscreenxplaybutton.png" id="3_cqky1"]
+[ext_resource type="Texture2D" uid="uid://tc3ijqktwqu1" path="res://Images/ipodscreenback.png" id="3_k8a5l"]
+[ext_resource type="Texture2D" uid="uid://cbq4ehxfhpg5b" path="res://Images/ipodscreenforw.png" id="4_7kie2"]
+[ext_resource type="PackedScene" uid="uid://cyol5plmbf88e" path="res://Scenes/Button.tscn" id="5_5yfd8"]
+[ext_resource type="Texture2D" uid="uid://bqe43qu5j00ei" path="res://icon.svg" id="6_hurl0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vggg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uliuu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ynmgy")
+}],
+"loop": true,
+"name": &"exit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cqky1")
+}],
+"loop": true,
+"name": &"pause",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cqky1")
+}],
+"loop": true,
+"name": &"pause_exit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k8a5l")
+}],
+"loop": true,
+"name": &"previous",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7kie2")
+}],
+"loop": true,
+"name": &"skip",
+"speed": 5.0
+}]
+
+[node name="MusicPlayer" type="Node3D"]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0, 0)
+script = ExtResource("1_aqtf2")
+tracks = Array[ExtResource("2_f1121")]([ExtResource("3_cqdj0"), ExtResource("3_cqdj0"), ExtResource("3_cqdj0")])
+song_index = 1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+volume_db = -35.0
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1vggg")
+animation = &"pause_exit"
+autoplay = "default"
+
+[node name="Sprite3D" type="Sprite3D" parent="AnimatedSprite3D"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.044, 0.518, -0.240569)
+texture = ExtResource("6_hurl0")
+
+[node name="Button" parent="." instance=ExtResource("5_5yfd8")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.472732, -0.492731, 0.0162267)
+animation = "previous"
+
+[node name="Button2" parent="." instance=ExtResource("5_5yfd8")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.623439, -0.492731, 0.0162267)
+animation = "skip"
+
+[node name="Button4" parent="." instance=ExtResource("5_5yfd8")]
+transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0.912, 1.43112, 0.016)
+animation = "exit"
+
+[node name="Button3" parent="." instance=ExtResource("5_5yfd8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0918519, -0.468391, 0.0162267)
+animation = "pause"
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

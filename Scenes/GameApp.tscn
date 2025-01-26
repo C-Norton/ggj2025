@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c1r05rcenmrdp"]
+[gd_scene load_steps=22 format=3 uid="uid://c1r05rcenmrdp"]
 
 [ext_resource type="Texture2D" uid="uid://ccqtpg1hn3mxt" path="res://Images/App/defaultScreen.png" id="1_e2hin"]
 [ext_resource type="Texture2D" uid="uid://i7x31vhpkpc3" path="res://Images/App/Screen1pressvbutton.png" id="1_m27js"]
@@ -152,9 +152,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_oop8f"]
-viewport_path = NodePath("SubViewportContainer/ScreenDisplayViewport")
-
 [node name="GameApp" type="Node3D"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
 
@@ -164,14 +161,9 @@ sprite_frames = SubResource("SpriteFrames_hpufy")
 animation = &"press_button_x"
 autoplay = "default"
 
-[node name="Border" type="Sprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-visible = false
-texture = ExtResource("1_e2hin")
-
 [node name="Display Image" type="Sprite3D" parent="."]
 transform = Transform3D(0.857141, 0, 0, 0, 0.958687, 0, -8.88178e-16, 0, 0.500908, 0.0439334, -0.017, -0.0913149)
-texture = SubResource("ViewportTexture_oop8f")
+texture = ExtResource("2_cp30q")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 offset_left = -1904.0
@@ -221,3 +213,5 @@ animation = "press_button_play"
 [node name="ButtonX" parent="." instance=ExtResource("20_0vdr1")]
 transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0.645306, 0.599068, 0.0084743)
 animation = "press_button_x"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
