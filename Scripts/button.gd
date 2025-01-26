@@ -16,8 +16,7 @@ func _on_click_release(_true):
 	is_clicking = false
 	animated_sprite.stop()
 	animated_sprite.play("default")
-	print("HIT")
-	#print("is_dragging: ", is_dragging)
+	#print("HIT")
 	
 
 
@@ -44,5 +43,5 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 
 # Function to play animation based on segment
 func play_animation_for_button(animation: String) -> void:
-	print("playing anim")
+	#print("playing anim")
 	animated_sprite.play(animation)

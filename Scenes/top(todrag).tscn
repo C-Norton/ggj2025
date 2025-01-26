@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://brmnchvag4tom"]
 
-[ext_resource type="Script" path="res://Scenes/DragV2.gd" id="1_0iag2"]
+[ext_resource type="Script" path="res://Scripts/DragV2.gd" id="1_0iag2"]
 [ext_resource type="Material" uid="uid://m16fant51b4r" path="res://Materials/Transparent.tres" id="2_6f1ay"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xtno8"]

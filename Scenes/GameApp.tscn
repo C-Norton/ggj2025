@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://i7x31vhpkpc3" path="res://Images/App/Screen1pressvbutton.png" id="1_m27js"]
 [ext_resource type="Texture2D" uid="uid://ibsk4e7obgto" path="res://Images/App/Screen1pressbubbles.png" id="2_6a8j5"]
 [ext_resource type="Texture2D" uid="uid://bqe43qu5j00ei" path="res://icon.svg" id="2_cp30q"]
-[ext_resource type="Script" path="res://Scenes/ViewPortFollow.gd" id="2_kkfks"]
+[ext_resource type="Script" path="res://Scripts/ViewPortFollow.gd" id="2_kkfks"]
 [ext_resource type="Texture2D" uid="uid://doxvhojdynvv1" path="res://Images/App/Screen1presseyes.png" id="3_bk8c6"]
 [ext_resource type="Texture2D" uid="uid://vkm8rin61hrd" path="res://Images/App/Screen1presslight.png" id="4_80ioh"]
 [ext_resource type="Texture2D" uid="uid://d3kkcjuqjcin6" path="res://Images/App/Screen1pressiibutton.png" id="5_388ui"]
