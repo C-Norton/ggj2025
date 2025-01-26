@@ -192,7 +192,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0901
 centered = false
 texture = ExtResource("2_cp30q")
 
-[node name="ButtonStick" parent="TopDrag" instance=ExtResource("19_xqoto")]
+[node name="ButtonStick" parent="TopDrag" groups=["Game"] instance=ExtResource("19_xqoto")]
 transform = Transform3D(-9.83506e-09, 0, -0.225, 0, 0.225, 0, 0.225, 0, -9.83506e-09, 2.63084e-08, -0.749672, -0.472864)
 
 [node name="ButtonBubble" parent="TopDrag" instance=ExtResource("20_0vdr1")]

@@ -25,15 +25,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.301
 app = ExtResource("2_b3clr")
 
 [node name="Folder" type="Sprite3D" parent="BubbleOSLayer"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.367, 0.253664, -2)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.04392, 1.6339, -2.70244)
 texture = ExtResource("5_ngvhp")
 
 [node name="Folder2" type="Sprite3D" parent="BubbleOSLayer"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.367, 0.254, -1.25)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.04392, 1.63424, -1.95244)
 texture = ExtResource("5_ngvhp")
 
 [node name="Folder3" type="Sprite3D" parent="BubbleOSLayer"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.367, 0.254, -0.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.04392, 1.63424, -1.20244)
 texture = ExtResource("5_ngvhp")
 
 [node name="MainCam" type="Camera3D" parent="."]

@@ -6,6 +6,8 @@ var is_dragging = false
 var drag_origin : Vector2 = Vector2.ZERO
 @export var drag_threshold: float = 25.0
 
+signal rotate_ship(angle: float)
+
 var previous_mouse_pos = Vector2.ZERO  # Track previous mouse position
 
 func _ready():
@@ -71,20 +73,28 @@ func play_animation_for_segment(segment: int) -> void:
 	match segment:
 		0: 
 			animated_sprite.play("stick_down")
+			emit_signal("rotate_ship", -180)
 		1: 
 			animated_sprite.play("stick_down_right")
+			emit_signal("rotate_ship", -135)
 		2: 
 			animated_sprite.play("stick_right")
+			emit_signal("rotate_ship", -90)
 		3: 
 			animated_sprite.play("stick_up_right")
+			emit_signal("rotate_ship", -45)
 		4: 
 			animated_sprite.play("stick_up")
+			emit_signal("rotate_ship", 0)
 		5: 
 			animated_sprite.play("stick_up_left")
+			emit_signal("rotate_ship", 45) 
 		6: 
 			animated_sprite.play("stick_left")
+			emit_signal("rotate_ship", 90)
 		7: 
 			animated_sprite.play("stick_down_left")
+			emit_signal("rotate_ship", 135)
 			
 			
 func play_animation_for_button(animation: String) -> void:

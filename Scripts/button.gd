@@ -8,6 +8,9 @@ var is_paused = false
 @onready var parent = $".."
 var previous_mouse_pos = Vector2.ZERO  # Track previous mouse position
 var is_exit = false
+var has_boost = false
+
+signal move_ship(speed: float)
 
 func _ready():
 	GameManager.connect("mouse_released", _on_click_release)
@@ -42,6 +45,8 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 		else:
 			# Stop dragging and reset to default
 			is_clicking = false
+			if has_boost:
+				has_boost = false
 			if is_exit:
 				parent.queue_free()
 			#animated_sprite.play("default")  # Stop dragging and return to default animation
@@ -66,6 +71,10 @@ func play_animation_for_button(animation: String) -> void:
 			is_paused = false
 			is_clicking = false
 			animated_sprite.play("default")
+			
+	elif animation == "press_button_play":
+		has_boost = true
+		emit_signal("move_ship", 30)
 	else:
 		is_paused = false
 		animated_sprite.play(animation)

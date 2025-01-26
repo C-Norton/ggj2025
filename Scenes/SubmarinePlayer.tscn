@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8e45v6wknb41"]
+
+[ext_resource type="PackedScene" uid="uid://vkodac06hayp" path="res://Images/littlewhalesubmarinething.glb" id="1_5deg6"]
+[ext_resource type="Script" path="res://Scripts/submarine_player.gd" id="1_pi3bu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1gpse"]
+
+[node name="Player" type="Camera3D"]
+transform = Transform3D(1, 5.08229e-21, 1.98952e-13, -5.08221e-21, 1, -4.26327e-13, -1.98952e-13, 4.26327e-13, 1, -2.62451, 0.500748, 2.60308)
+fov = 20.0
+script = ExtResource("1_pi3bu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 1.20371e-35, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.44591)
+light_energy = 2.235
+light_angular_distance = 90.0
+
+[node name="littlewhalesubmarinething" parent="." instance=ExtResource("1_5deg6")]
+transform = Transform3D(-3.27835e-09, 4.95017e-16, 0.075, 1.13247e-08, 0.075, 7.20029e-22, 0.075, -1.13247e-08, 3.27835e-09, 0.017, -0.054, -3.04222)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="littlewhalesubmarinething"]
+gravity_scale = 0.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="littlewhalesubmarinething/RigidBody3D"]
+transform = Transform3D(1.42109e-14, 4.37114e-08, -1, 1, -4.37114e-08, 1.42109e-14, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_1gpse")

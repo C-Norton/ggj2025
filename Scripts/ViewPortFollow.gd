@@ -11,6 +11,6 @@ extends SubViewportContainer
 
 
 func _ready():
-	var scene_to_display = preload("res://Scenes/Level.tscn").instantiate()
+	var scene_to_display = preload("res://Wobbix/Scenes/LevelWob.tscn").instantiate()
 	viewport.add_child(scene_to_display)
 	print("SCENE ADDED")

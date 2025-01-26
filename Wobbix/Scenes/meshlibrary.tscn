@@ -1,0 +1,108 @@
+[gd_scene load_steps=3 format=3 uid="uid://elboxcsp81xs"]
+
+[ext_resource type="PackedScene" uid="uid://15i70g7av8vq" path="res://Wobbix/Assets/stone_floor_tile.glb" id="1_xoer0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g278n"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="stone_floor_tile" parent="." instance=ExtResource("1_xoer0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_015" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_015/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_016" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_016/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_017" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_017/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_018" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_018/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_019" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_019/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_020" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_020/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_021" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_021/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_014" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_014/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Plane_020" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Plane_020/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_027" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_027/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_028" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_028/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_029" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_029/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_030" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_030/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Plane_021" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Plane_021/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_046" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_046/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone_floor_tile/Cube_049" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone_floor_tile/Cube_049/StaticBody3D"]
+shape = SubResource("BoxShape3D_g278n")
+
+[editable path="stone_floor_tile"]
