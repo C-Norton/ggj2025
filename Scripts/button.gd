@@ -5,8 +5,9 @@ extends Node3D
 var is_clicking = false
 var is_paused = false
 @export var animation : String
-
+@onready var parent = $".."
 var previous_mouse_pos = Vector2.ZERO  # Track previous mouse position
+var is_exit = false
 
 func _ready():
 	GameManager.connect("mouse_released", _on_click_release)
@@ -41,14 +42,22 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 		else:
 			# Stop dragging and reset to default
 			is_clicking = false
+			if is_exit:
+				parent.queue_free()
 			#animated_sprite.play("default")  # Stop dragging and return to default animation
 
 
 # Function to play animation based on segment
 func play_animation_for_button(animation: String) -> void:
 	#print("playing anim")
-	
-	if animation == "pause":
+	if animation == "exit" or animation == "press_button_x":
+		is_exit = true
+		if is_paused:
+			animated_sprite.play("pause_exit")
+		else:
+			animated_sprite.play(animation)
+			
+	elif animation == "pause":
 		if !is_paused:
 			is_paused = true
 			is_clicking = false

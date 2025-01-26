@@ -12,3 +12,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("Click"):
 		#print("Signal Emitted")
 		emit_signal("mouse_released", true)
+	if Input.is_action_just_pressed("Click"):
+		#print("Signal Emitted")
+		#Play sound
+		pass

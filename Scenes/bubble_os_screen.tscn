@@ -1,31 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://csam5h6228byy"]
+[gd_scene load_steps=6 format=3 uid="uid://csam5h6228byy"]
 
 [ext_resource type="PackedScene" uid="uid://c1r05rcenmrdp" path="res://Scenes/GameApp.tscn" id="2_b3clr"]
-[ext_resource type="PackedScene" uid="uid://brmnchvag4tom" path="res://Scenes/top(todrag).tscn" id="2_ebenc"]
 [ext_resource type="PackedScene" uid="uid://6skhxups3b25" path="res://Scenes/MusicPlayer.tscn" id="4_1q6kv"]
+[ext_resource type="PackedScene" uid="uid://cli07ks2vbgog" path="res://Scenes/LaunchGame.tscn" id="4_ec0pr"]
 [ext_resource type="Texture2D" uid="uid://n7jsgx8yvv5b" path="res://Images/attemptsatfrutigerbubble.png" id="4_p7gy8"]
+[ext_resource type="Texture2D" uid="uid://chl6rb4unp685" path="res://Images/Folder.png" id="5_ngvhp"]
 
 [node name="Scene" type="Node3D"]
 
 [node name="BubbleOSLayer" type="Node3D" parent="."]
 
 [node name="Background" type="Sprite3D" parent="BubbleOSLayer"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 0, 0)
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 0.480011, 1.25932, 0)
 texture = ExtResource("4_p7gy8")
 
-[node name="TopDragGame" parent="BubbleOSLayer" instance=ExtResource("2_ebenc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8963, 0, 0)
-sensitivity = 0.008
+[node name="GameApp" parent="BubbleOSLayer" instance=ExtResource("2_b3clr")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -1.93569, 0.0952314, -0.226863)
 
-[node name="GameApp" parent="BubbleOSLayer/TopDragGame" instance=ExtResource("2_b3clr")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -0.00162292, -0.199379, 0)
+[node name="MusicPlayer" parent="BubbleOSLayer" instance=ExtResource("4_1q6kv")]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.433192, 0, 0.403355, 0, -1.76312e-08, -1.88671, 0.799975, 1.39106)
 
-[node name="TopDragMusic" parent="BubbleOSLayer" instance=ExtResource("2_ebenc")]
-transform = Transform3D(1, 0, 0, 0, 0.653879, 0, 0, 0, 0.645804, -1.8706, 1.14247, 1.34873)
-sensitivity = 0.007
+[node name="Launcher" parent="BubbleOSLayer" instance=ExtResource("4_ec0pr")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.3015, -0.157155, 0.295094)
+app = ExtResource("2_b3clr")
 
-[node name="MusicPlayer" parent="BubbleOSLayer/TopDragMusic" instance=ExtResource("4_1q6kv")]
-transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.662496, 0, 0.624578, 0, -2.73012e-08, -0.0161128, -0.52379, 0.0655489)
+[node name="Folder" type="Sprite3D" parent="BubbleOSLayer"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.367, 0.253664, -2)
+texture = ExtResource("5_ngvhp")
+
+[node name="Folder2" type="Sprite3D" parent="BubbleOSLayer"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.367, 0.254, -1.25)
+texture = ExtResource("5_ngvhp")
+
+[node name="Folder3" type="Sprite3D" parent="BubbleOSLayer"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.367, 0.254, -0.5)
+texture = ExtResource("5_ngvhp")
 
 [node name="MainCam" type="Camera3D" parent="."]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -5, 0, 0)

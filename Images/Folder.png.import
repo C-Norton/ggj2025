@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dswg6u5ev6vbh"
-path.s3tc="res://.godot/imported/ipodscreenplay.png-84e2e0e0ec312c2e0c893d53e6d7b05c.s3tc.ctex"
+uid="uid://chl6rb4unp685"
+path.s3tc="res://.godot/imported/Folder.png-2e17150d4c9761a0958d6fe473e34fa5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/ipodscreenplay.png"
-dest_files=["res://.godot/imported/ipodscreenplay.png-84e2e0e0ec312c2e0c893d53e6d7b05c.s3tc.ctex"]
+source_file="res://Images/Folder.png"
+dest_files=["res://.godot/imported/Folder.png-2e17150d4c9761a0958d6fe473e34fa5.s3tc.ctex"]
 
 [params]
 

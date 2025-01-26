@@ -31,8 +31,8 @@ func prev_song():
 	
 	
 func play_music(song):
-	$AudioStreamPlayer3D.stream = song
-	$AudioStreamPlayer3D.play()
+	$TopDrag/AudioStreamPlayer3D.stream = song
+	$TopDrag/AudioStreamPlayer3D.play()
 	
 	
 # Called when the node enters the scene tree for the first time.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c1r05rcenmrdp"]
+[gd_scene load_steps=24 format=3 uid="uid://c1r05rcenmrdp"]
 
 [ext_resource type="Texture2D" uid="uid://ccqtpg1hn3mxt" path="res://Images/App/defaultScreen.png" id="1_e2hin"]
 [ext_resource type="Texture2D" uid="uid://i7x31vhpkpc3" path="res://Images/App/Screen1pressvbutton.png" id="1_m27js"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://u477hyikj81t" path="res://Images/App/Screen1upright.png" id="16_ruwh6"]
 [ext_resource type="PackedScene" uid="uid://b8fja8m21hycg" path="res://Scenes/ButtonStick.tscn" id="19_xqoto"]
 [ext_resource type="PackedScene" uid="uid://cyol5plmbf88e" path="res://Scenes/Button.tscn" id="20_0vdr1"]
+[ext_resource type="PackedScene" uid="uid://brmnchvag4tom" path="res://Scenes/top(todrag).tscn" id="21_1nfiv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hpufy"]
 animations = [{
@@ -29,6 +30,14 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_388ui")
+}],
+"loop": true,
+"name": &"pause",
 "speed": 5.0
 }, {
 "frames": [{
@@ -53,14 +62,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"press_button_light",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_388ui")
-}],
-"loop": true,
-"name": &"press_button_pause",
 "speed": 5.0
 }, {
 "frames": [{
@@ -152,66 +153,75 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_5vfbv"]
+viewport_path = NodePath("TopDrag/SubViewportContainer/ScreenDisplayViewport")
+
 [node name="GameApp" type="Node3D"]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+[node name="TopDrag" parent="." instance=ExtResource("21_1nfiv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.202507, 0)
+sensitivity = 0.008
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="TopDrag"]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, -0.202507, 0)
 sprite_frames = SubResource("SpriteFrames_hpufy")
-animation = &"press_button_x"
+animation = &"pause"
 autoplay = "default"
 
-[node name="Display Image" type="Sprite3D" parent="."]
-transform = Transform3D(0.857141, 0, 0, 0, 0.958687, 0, -8.88178e-16, 0, 0.500908, 0.0439334, -0.017, -0.0913149)
-texture = ExtResource("2_cp30q")
+[node name="Display Image" type="Sprite3D" parent="TopDrag"]
+transform = Transform3D(-3.74668e-08, 0, -0.500908, 0, 0.958687, 0, 0.857141, 0, -2.18954e-08, 0.0913149, -0.219507, 0.0439334)
+texture = SubResource("ViewportTexture_5vfbv")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="TopDrag"]
 offset_left = -1904.0
 offset_top = -750.0
 offset_right = -1776.0
 offset_bottom = -622.0
 script = ExtResource("2_kkfks")
 
-[node name="ScreenDisplayViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="ScreenDisplayViewport" type="SubViewport" parent="TopDrag/SubViewportContainer"]
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(128, 128)
 render_target_update_mode = 4
 
-[node name="SceneRender" type="Sprite3D" parent="SubViewportContainer/ScreenDisplayViewport"]
-transform = Transform3D(-3.80289e-08, 0, -0.87, 0, 0.87, 0, 0.87, 0, -3.80289e-08, 0.0901576, -0.592, -0.503633)
+[node name="SceneRender" type="Sprite3D" parent="TopDrag/SubViewportContainer/ScreenDisplayViewport"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0901576, -0.592, -0.503633)
 centered = false
 texture = ExtResource("2_cp30q")
 
-[node name="ButtonStick" parent="." instance=ExtResource("19_xqoto")]
+[node name="ButtonStick" parent="TopDrag" instance=ExtResource("19_xqoto")]
+transform = Transform3D(-9.83506e-09, 0, -0.225, 0, 0.225, 0, 0.225, 0, -9.83506e-09, 2.63084e-08, -0.749672, -0.472864)
 
-[node name="ButtonBubble" parent="." instance=ExtResource("20_0vdr1")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.435314, -0.643179, 0.00824883)
+[node name="ButtonBubble" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -0.00824885, -0.845686, 0.435314)
 animation = "press_button_bubbles"
 
-[node name="ButtonLight" parent="." instance=ExtResource("20_0vdr1")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.621507, -0.564408, 0.00790056)
+[node name="ButtonLight" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -0.00790059, -0.766915, 0.621507)
 animation = "press_button_light"
 
-[node name="ButtonEye" parent="." instance=ExtResource("20_0vdr1")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.674205, -0.391028, 0.00824883)
+[node name="ButtonEye" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -0.00824886, -0.593535, 0.674205)
 animation = "press_button_eyes"
 
-[node name="ButtonFast" parent="." instance=ExtResource("20_0vdr1")]
-transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, -0.564018, 0.0902632, 0.00680057)
+[node name="ButtonFast" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+transform = Transform3D(-9.39795e-09, 0, -0.215, 0, 0.215, 0, 0.215, 0, -9.39795e-09, -0.00680055, -0.112244, -0.564018)
 animation = "press_button_speed"
 
-[node name="ButtonPause" parent="." instance=ExtResource("20_0vdr1")]
-transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, -0.49383, 0.181412, 0.00728543)
-animation = "press_button_pause"
+[node name="ButtonPause" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+transform = Transform3D(-9.39795e-09, 0, -0.215, 0, 0.215, 0, 0.215, 0, -9.39795e-09, -0.00728541, -0.0210954, -0.49383)
+animation = "pause"
 
-[node name="ButtonPlay" parent="." instance=ExtResource("20_0vdr1")]
-transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, -0.57833, 0.287436, 0.00776559)
+[node name="ButtonPlay" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+transform = Transform3D(-9.39795e-09, 0, -0.215, 0, 0.215, 0, 0.215, 0, -9.39795e-09, -0.00776557, 0.0849286, -0.57833)
 animation = "press_button_play"
 
-[node name="ButtonX" parent="." instance=ExtResource("20_0vdr1")]
-transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0.645306, 0.599068, 0.0084743)
+[node name="ButtonX" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+transform = Transform3D(-1.46433e-08, 0, -0.335, 0, 0.335, 0, 0.335, 0, -1.46433e-08, -0.00847433, 0.396561, 0.645306)
 animation = "press_button_x"
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="TopDrag"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.202507, 0)
