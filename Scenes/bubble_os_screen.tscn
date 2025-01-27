@@ -21,7 +21,7 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -1.93569
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.433192, 0, 0.403355, 0, -1.76312e-08, -1.88671, 0.799975, 1.39106)
 
 [node name="Launcher" parent="BubbleOSLayer" instance=ExtResource("4_ec0pr")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.3015, 1.58185, -4.51614)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.3015, -0.776403, -2.83371)
 app = ExtResource("2_b3clr")
 
 [node name="Folder" type="Sprite3D" parent="BubbleOSLayer"]
