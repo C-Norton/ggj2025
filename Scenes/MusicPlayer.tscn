@@ -85,7 +85,7 @@ animation = &"pause_exit"
 autoplay = "default"
 
 [node name="Sprite3D" type="Sprite3D" parent="TopDrag/AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0.044, 0.409809, -0.240569)
+transform = Transform3D(1, 0, 0, 0, 1, 0, -1.77636e-14, 0, 1, 0.044, 0.540497, -0.0867413)
 texture = ExtResource("11_jtp4n")
 
 [node name="Button" parent="TopDrag" instance=ExtResource("5_5yfd8")]

@@ -72,8 +72,9 @@ func play_animation_for_button(animation: String) -> void:
 			is_clicking = false
 			animated_sprite.play("default")
 			
-	elif animation == "press_button_play":
+	elif animation == "press_button_bubbles":
 		has_boost = true
+		animated_sprite.play(animation)
 		emit_signal("move_ship", 30)
 	else:
 		is_paused = false

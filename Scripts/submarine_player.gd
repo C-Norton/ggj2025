@@ -6,6 +6,9 @@ extends Camera3D
 var target_angle = 0.0  # Store the target angle
 @onready var littlewhalesubmarinething: Node3D = $littlewhalesubmarinething
 
+var move_speed: float = 0.0  # The current speed of the submarine
+var movement_duration: float = 3.0  # How long to move the ship (in seconds)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Lock the linear axes if necessary
@@ -14,42 +17,43 @@ func _ready() -> void:
 	
 	# Ensure that we are connecting the signal to the correct node
 	if game_nodes.size() > 0:
-		var game_node = game_nodes[0]  # Assuming you want the first node in the group
-		game_node.connect("rotate_ship", _on_rotate_ship)
-		game_node.connect("move_ship", _on_move_ship)
+		# each node represents a different button based on heirarchy
+		game_nodes[0].connect("rotate_ship", _on_rotate_ship)
+		game_nodes[1].connect("move_ship", _on_move_ship)
 	else:
 		print("No nodes found in group 'Game'")
 
-# Called when the signal is emitted
+# Called when the signal is emitted to move the ship
 func _on_move_ship(speed: float) -> void:
-	# Get the current rotation (direction the submarine is facing)
-	var rotation_in_radians = deg_to_rad(littlewhalesubmarinething.rotation_degrees.x)
-	
-	# Calculate the movement direction based on the rotation
-	var direction = Vector3(sin(rotation_in_radians), 0, cos(rotation_in_radians))  # Forward movement in the x-z plane
-	
-	# Normalize the direction vector to ensure consistent movement speed
-	direction = direction.normalized()
-
-	# Apply the impulse in the calculated direction
-	rigid_body_3d.apply_impulse(direction * speed)  # Impulse will move the submarine
+	move_speed = speed / 50
+	await get_tree().create_timer(movement_duration).timeout  # Wait for the timer to finish
+	move_speed = 0  # Stop movement after the specified duration
 
 func _on_rotate_ship(new_target_angle: float) -> void:
-	# Apply an offset of +90 degrees to the target angle to fix direction inversion
-	target_angle = new_target_angle + 90  # Add 90 degrees to the signal's value
+	target_angle = new_target_angle + 90 
 
-# Rotate smoothly in the _process function
 func _process(delta: float) -> void:
-	# Only rotate if target angle is set
 	if target_angle != null:
-		# Get the current rotation of the submarine (not the camera)
 		var current_rotation = littlewhalesubmarinething.rotation_degrees.x  # Assuming it's on the x-axis
 
-		# Calculate the shortest angle difference
 		var angle_diff = wrapf(target_angle - current_rotation, -180, 180)
 
-		# Smoothly rotate towards the target angle
 		var new_rotation_x = current_rotation + angle_diff * rotation_speed * delta
 
-		# Apply the new rotation to the submarine (littlewhalesubmarinething)
 		littlewhalesubmarinething.rotation_degrees.x = new_rotation_x
+
+	if move_speed != 0:
+		move_submarine(delta)
+
+# Function to move the submarine
+func move_submarine(delta: float) -> void:
+	var adjusted_rotation = littlewhalesubmarinething.rotation_degrees.x
+	
+	var rotation_in_radians = deg_to_rad(adjusted_rotation)
+	
+	var direction = Vector3(cos(rotation_in_radians), sin(rotation_in_radians), 0)  # Movement in the x-y plane
+	
+	direction = direction.normalized()
+
+	# Apply movement based on the direction and speed
+	$".".position += direction * move_speed * delta

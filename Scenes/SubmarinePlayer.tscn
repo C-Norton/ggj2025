@@ -11,7 +11,7 @@ fov = 20.0
 script = ExtResource("1_pi3bu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 1.20371e-35, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.44591)
+transform = Transform3D(1, 1.20371e-35, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.506)
 light_energy = 2.235
 light_angular_distance = 90.0
 

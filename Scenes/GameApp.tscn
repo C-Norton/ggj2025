@@ -166,7 +166,7 @@ sensitivity = 0.008
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="TopDrag"]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, -0.202507, 0)
 sprite_frames = SubResource("SpriteFrames_hpufy")
-animation = &"pause"
+animation = &"press_button_bubbles"
 autoplay = "default"
 
 [node name="Display Image" type="Sprite3D" parent="TopDrag"]
@@ -195,27 +195,27 @@ texture = ExtResource("2_cp30q")
 [node name="ButtonStick" parent="TopDrag" groups=["Game"] instance=ExtResource("19_xqoto")]
 transform = Transform3D(-9.83506e-09, 0, -0.225, 0, 0.225, 0, 0.225, 0, -9.83506e-09, 2.63084e-08, -0.749672, -0.472864)
 
-[node name="ButtonBubble" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+[node name="ButtonBubble" parent="TopDrag" groups=["Game"] instance=ExtResource("20_0vdr1")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -0.00824885, -0.845686, 0.435314)
 animation = "press_button_bubbles"
 
-[node name="ButtonLight" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+[node name="ButtonLight" parent="TopDrag" groups=["Game"] instance=ExtResource("20_0vdr1")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -0.00790059, -0.766915, 0.621507)
 animation = "press_button_light"
 
-[node name="ButtonEye" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+[node name="ButtonEye" parent="TopDrag" groups=["Game"] instance=ExtResource("20_0vdr1")]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -0.00824886, -0.593535, 0.674205)
 animation = "press_button_eyes"
 
-[node name="ButtonFast" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+[node name="ButtonFast" parent="TopDrag" groups=["Game"] instance=ExtResource("20_0vdr1")]
 transform = Transform3D(-9.39795e-09, 0, -0.215, 0, 0.215, 0, 0.215, 0, -9.39795e-09, -0.00680055, -0.112244, -0.564018)
 animation = "press_button_speed"
 
-[node name="ButtonPause" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+[node name="ButtonPause" parent="TopDrag" groups=["Game"] instance=ExtResource("20_0vdr1")]
 transform = Transform3D(-9.39795e-09, 0, -0.215, 0, 0.215, 0, 0.215, 0, -9.39795e-09, -0.00728541, -0.0210954, -0.49383)
 animation = "pause"
 
-[node name="ButtonPlay" parent="TopDrag" instance=ExtResource("20_0vdr1")]
+[node name="ButtonPlay" parent="TopDrag" groups=["Game"] instance=ExtResource("20_0vdr1")]
 transform = Transform3D(-9.39795e-09, 0, -0.215, 0, 0.215, 0, 0.215, 0, -9.39795e-09, -0.00776557, 0.0849286, -0.57833)
 animation = "press_button_play"
 
