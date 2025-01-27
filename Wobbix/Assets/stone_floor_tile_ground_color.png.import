@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c32jo4fn4vwgw"
 path.s3tc="res://.godot/imported/stone_floor_tile_ground_color.png-c09a85ffef160448f3281fd6338fbeda.s3tc.ctex"
+path.etc2="res://.godot/imported/stone_floor_tile_ground_color.png-c09a85ffef160448f3281fd6338fbeda.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Wobbix/Assets/stone_floor_tile_ground_color.png"
-dest_files=["res://.godot/imported/stone_floor_tile_ground_color.png-c09a85ffef160448f3281fd6338fbeda.s3tc.ctex"]
+dest_files=["res://.godot/imported/stone_floor_tile_ground_color.png-c09a85ffef160448f3281fd6338fbeda.s3tc.ctex", "res://.godot/imported/stone_floor_tile_ground_color.png-c09a85ffef160448f3281fd6338fbeda.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd2c6ynqc6q41"
 path.s3tc="res://.godot/imported/PeakWriting.jpg-6028f9d555e9133ebb8ec7e2905f2492.s3tc.ctex"
+path.etc2="res://.godot/imported/PeakWriting.jpg-6028f9d555e9133ebb8ec7e2905f2492.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://PeakWriting.jpg"
-dest_files=["res://.godot/imported/PeakWriting.jpg-6028f9d555e9133ebb8ec7e2905f2492.s3tc.ctex"]
+dest_files=["res://.godot/imported/PeakWriting.jpg-6028f9d555e9133ebb8ec7e2905f2492.s3tc.ctex", "res://.godot/imported/PeakWriting.jpg-6028f9d555e9133ebb8ec7e2905f2492.etc2.ctex"]
 
 [params]
 

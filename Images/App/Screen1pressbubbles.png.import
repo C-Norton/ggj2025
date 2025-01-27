@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ibsk4e7obgto"
 path.s3tc="res://.godot/imported/Screen1pressbubbles.png-9f20049f41f1d9305b1cf07c0c212fa0.s3tc.ctex"
+path.etc2="res://.godot/imported/Screen1pressbubbles.png-9f20049f41f1d9305b1cf07c0c212fa0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/App/Screen1pressbubbles.png"
-dest_files=["res://.godot/imported/Screen1pressbubbles.png-9f20049f41f1d9305b1cf07c0c212fa0.s3tc.ctex"]
+dest_files=["res://.godot/imported/Screen1pressbubbles.png-9f20049f41f1d9305b1cf07c0c212fa0.s3tc.ctex", "res://.godot/imported/Screen1pressbubbles.png-9f20049f41f1d9305b1cf07c0c212fa0.etc2.ctex"]
 
 [params]
 

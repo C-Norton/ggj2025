@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vkm8rin61hrd"
 path.s3tc="res://.godot/imported/Screen1presslight.png-16a354d7c6bc376e355f70b267bfcdff.s3tc.ctex"
+path.etc2="res://.godot/imported/Screen1presslight.png-16a354d7c6bc376e355f70b267bfcdff.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Images/App/Screen1presslight.png"
-dest_files=["res://.godot/imported/Screen1presslight.png-16a354d7c6bc376e355f70b267bfcdff.s3tc.ctex"]
+dest_files=["res://.godot/imported/Screen1presslight.png-16a354d7c6bc376e355f70b267bfcdff.s3tc.ctex", "res://.godot/imported/Screen1presslight.png-16a354d7c6bc376e355f70b267bfcdff.etc2.ctex"]
 
 [params]
 

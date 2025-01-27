@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://co4uwr6bn4e4a"
 path.s3tc="res://.godot/imported/stone_floor_tile_baked_gravel_stone_left_normal.png-8280beaeea72e682b905c1157c7ee718.s3tc.ctex"
+path.etc2="res://.godot/imported/stone_floor_tile_baked_gravel_stone_left_normal.png-8280beaeea72e682b905c1157c7ee718.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Wobbix/Assets/stone_floor_tile_baked_gravel_stone_left_normal.png"
-dest_files=["res://.godot/imported/stone_floor_tile_baked_gravel_stone_left_normal.png-8280beaeea72e682b905c1157c7ee718.s3tc.ctex"]
+dest_files=["res://.godot/imported/stone_floor_tile_baked_gravel_stone_left_normal.png-8280beaeea72e682b905c1157c7ee718.s3tc.ctex", "res://.godot/imported/stone_floor_tile_baked_gravel_stone_left_normal.png-8280beaeea72e682b905c1157c7ee718.etc2.ctex"]
 
 [params]
 
